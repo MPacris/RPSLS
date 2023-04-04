@@ -99,7 +99,7 @@ display winner
 print OUTRO
   do you want to replay here and reset counter
   
-  ####to handle discrepancies where there are choices, need to have a loop of sorts
+  ####to handle discrepancies where there are choices, need to have a loop of sorts to make them choose the right choice or default to something####
   
   
   
