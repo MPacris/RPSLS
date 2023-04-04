@@ -22,7 +22,6 @@ writing out the steps, it will make you think about every piece needed to bring 
 
 
 
-WILL DO 
 
 
 STEPS
@@ -99,6 +98,8 @@ run the game
 display winner
 print OUTRO
   do you want to replay here and reset counter
+  
+  ####to handle discrepancies where there are choices, need to have a loop of sorts
   
   
   
