@@ -26,12 +26,21 @@ class Game:
     def collecting_gestures(self):
         self.player_one_gesture = self.player_one.choosing_gesture()
         self.player_two_gesture = self.player_two.choosing_gesture()
-        
 
         print(self.player_one_gesture)
         print(self.player_two_gesture)
-        
+    
+
+    
+    def compare_choices(self):
+        if self.player_one_gesture == 'rock':
+            if self.player_two_gesture == 'rock':
+                print('tie')
+            elif self.player_two_gesture == 'scissors' or 'lizard':
+                print('1 beats 2')
+            else:
+                print('2 beats 1')
         
 
-    def compare_choices(self):
-        pass
+
+        
