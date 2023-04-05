@@ -6,5 +6,4 @@ from game import Game
 
 game = Game()
 game.choosing_the_players()
-game.collecting_gestures()
-game.compare_choices()
+game.run_game()

@@ -7,6 +7,9 @@ class Game:
     def __init__(self) -> None:
         self.player_one_gesture = ''
         self.player_two_gesture = ''
+        self.player_one_wins = 0
+        self.player_two_wins = 0
+    
     
     def explaining_rules(self):
         print('Welcome!')
@@ -40,6 +43,19 @@ class Game:
             self.choosing_the_players()
 
 
+    def find_winner(self):
+        pass
+  
+    
+    def run_game(self):
+        while self.player_one_wins < 2 and self.player_two_wins < 2:
+            self.collecting_gestures()
+            self.compare_choices()
+            print(self.player_one_wins)
+            print(self.player_two_wins)
+
+
+
     def collecting_gestures(self):
         self.player_one_gesture = self.player_one.choosing_gesture()
         self.player_two_gesture = self.player_two.choosing_gesture()
@@ -55,29 +71,38 @@ class Game:
                 print('tie')
             elif self.player_two_gesture == 'scissors' or 'lizard':
                 print('1 beats 2')
+                self.player_one_wins += 1
+
             else:
                 print('2 beats 1')
+                self.player_two_wins += 1
         elif self.player_one_gesture == 'paper':
             if self.player_two_gesture == 'paper':
                 print('tie')
             elif self.player_two_gesture == 'rock' or 'spock':
                 print('1 beats 2')
+                self.player_one_wins += 1
             else:
                 print('2 beats 1')
+                self.player_two_wins += 1
         elif self.player_one_gesture == 'scissors':
             if self.player_two_gesture == 'scissors':
                 print('tie')
             elif self.player_two_gesture == 'paper' or self.player_two_gesture =='lizard':
                 print('1 beats 2')
+                self.player_one_wins += 1
             else:
                 print('2 beats 1')
+                self.player_two_wins += 1
         elif self.player_one_gesture == 'lizard':
             if self.player_two_gesture == 'lizard':
                 print('tie')
             elif self.player_two_gesture == 'spock' or self.player_two_gesture =='paper':
                 print('1 beats 2')
+                self.player_one_wins += 1
             else:
                 print('2 beats 1')
+                self.player_two_wins += 1
         elif self.player_one_gesture == 'spock':
             print(self.player_one_gesture)
             print(self.player_two_gesture)
@@ -85,10 +110,20 @@ class Game:
                 print('tie')
             elif self.player_two_gesture == 'scissors' or self.player_two_gesture =='rock':
                 print('1 beats 2')
+                self.player_one_wins += 1
             else:
                 print('2 beats 1')
+                self.player_two_wins += 1
+
+        print(f'compare_choice: {self.player_one_wins}')
+        print(f'compare_choice: {self.player_two_wins}')
+
+  
+    
+
         
-        
+
+
         
 
 
