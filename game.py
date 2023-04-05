@@ -8,6 +8,19 @@ class Game:
         self.player_one_gesture = ''
         self.player_two_gesture = ''
     
+    def explaining_rules(self):
+        print('Welcome!')
+
+        print('each player picks from rock, paper, scissors, lizard or Spock')
+
+        print('Rock crushes Scissors \n Scissors cuts Paper  \n Paper covers Rock \n Rock crushes Lizard  \n Lizard poisons Spock \n Spock smashes Scissors \n Scissors decapitates Lizard  \n Lizard eats Paper  \n Paper disproves Spock  \n Spock vaporizes Rock')
+
+        print('best two out of three!!')
+
+
+
+    
+    
     def choosing_the_players(self):
         self.number_of_players = input(f'choose the number of players from 0-2')
         if self.number_of_players == '0':
@@ -20,7 +33,11 @@ class Game:
 
         elif self.number_of_players == '2':
             self.player_one = Human()
-            self.player_two = Human()       
+            self.player_two = Human() 
+
+        else:   
+            print('Can only be 0, 1 or 2 players')
+            self.choosing_the_players()
 
 
     def collecting_gestures(self):
