@@ -4,5 +4,6 @@ from player import Player
 from game import Game
 
 
-game = Ai_player()
-game.choosing_gesture()
+game = Game()
+game.choosing_the_players()
+game.collecting_gestures()

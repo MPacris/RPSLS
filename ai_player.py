@@ -9,6 +9,7 @@ class Ai_player(Player):
 
     def choosing_gesture(self):
         self.gesture = random.choice(self.gestures_list)
-        print(self.gesture)
+        return self.gesture
+
 
 
