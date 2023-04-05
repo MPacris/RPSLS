@@ -40,6 +40,38 @@ class Game:
                 print('1 beats 2')
             else:
                 print('2 beats 1')
+        elif self.player_one_gesture == 'paper':
+            if self.player_two_gesture == 'paper':
+                print('tie')
+            elif self.player_two_gesture == 'rock' or 'spock':
+                print('1 beats 2')
+            else:
+                print('2 beats 1')
+        elif self.player_one_gesture == 'scissors':
+            if self.player_two_gesture == 'scissors':
+                print('tie')
+            elif self.player_two_gesture == 'paper' or self.player_two_gesture =='lizard':
+                print('1 beats 2')
+            else:
+                print('2 beats 1')
+        elif self.player_one_gesture == 'lizard':
+            if self.player_two_gesture == 'lizard':
+                print('tie')
+            elif self.player_two_gesture == 'spock' or self.player_two_gesture =='paper':
+                print('1 beats 2')
+            else:
+                print('2 beats 1')
+        elif self.player_one_gesture == 'spock':
+            print(self.player_one_gesture)
+            print(self.player_two_gesture)
+            if self.player_two_gesture == 'spock':
+                print('tie')
+            elif self.player_two_gesture == 'scissors' or self.player_two_gesture =='rock':
+                print('1 beats 2')
+            else:
+                print('2 beats 1')
+        
+        
         
 
 
