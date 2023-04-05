@@ -30,7 +30,6 @@ STEPS
 explain the rules
 -rules will come out as a string
 
--each player will choose 1 of 5 'gestures'
   -gestures will come from a list or should come from a class
   
   
@@ -64,6 +63,8 @@ input - pick number of players:  This can be a list
 -player will select a gesture from a list
   
   -person should be given choices from a list and will input the choice
+  -each player will choose 1 of 5 'gestures'
+  
   -AI- randomly select the chooses from the list
   
 
