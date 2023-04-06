@@ -1,6 +1,7 @@
 
 from ai_player import Ai_player
 from human_player import Human
+import sys,time
 
 class Game:
 
@@ -19,13 +20,13 @@ class Game:
 
     
     def explaining_rules(self):
-        print('Welcome!')
+        self.delprint('Welcome!\n')
         print()
-        print('each player picks from rock, paper, scissors, lizard or Spock')
+        self.delprint('Each player picks from rock, paper, scissors, lizard or Spock\n')
         print()
-        print('Rock crushes Scissors \n Scissors cuts Paper  \n Paper covers Rock \n Rock crushes Lizard  \n Lizard poisons Spock \n Spock smashes Scissors \n Scissors decapitates Lizard  \n Lizard eats Paper  \n Paper disproves Spock  \n Spock vaporizes Rock')
+        self.delprint(' Rock crushes Scissors \n Scissors cuts Paper  \n Paper covers Rock \n Rock crushes Lizard  \n Lizard poisons Spock \n Spock smashes Scissors \n Scissors decapitates Lizard  \n Lizard eats Paper  \n Paper disproves Spock  \n Spock vaporizes Rock')
         print()
-        print('First to TWO WINS or best of three wins is the OVERALL WINNER!!')
+        self.delprint('\n First to TWO WINS or best of three wins is the OVERALL WINNER!!')
         print()
 
 
@@ -33,36 +34,38 @@ class Game:
     
     
     def choosing_the_players(self):
-        self.number_of_players = input(f'choose the number of players from 0-2-  ')
+        self.number_of_players = input(f' Choose the number of players from 0-2:  ')
         if self.number_of_players == '0':
             self.player_one = Ai_player()
             self.player_two = Ai_player() 
-            print('you have chosen AI vs AI') 
+            self.delprint(' You have chosen AI vs AI') 
   
         elif self.number_of_players == '1':
             self.player_one = Human()
             self.player_two = Ai_player() 
-            print('you have chosen Human vs AI') 
+            self.delprint(' You have chosen Human vs AI') 
 
         elif self.number_of_players == '2':
             self.player_one = Human()
             self.player_two = Human() 
-            print('you have chosen Human vs Human') 
+            self.delprint(' You have chosen Human vs Human') 
 
         else:   
-            print('Can only be 0, 1 or 2 players')
+            self.delprint(' Can only be 0, 1 or 2 players...  Try again')
             self.choosing_the_players()
 
 
     
     def end_game_loop(self):
         while self.player_one_wins < 2 and self.player_two_wins < 2:
+            print()
             self.collecting_gestures()
             self.compare_choices()
+            print()
         if self.player_one_wins == 2:
-            print('Player One is Overall Winner')
+            self.delprint('*****   Player One is Overall Winner   *****')
         elif self.player_two_wins == 2:
-            print('Player Two is Overall Winner')
+            self.delprint('*****   Player Two is Overall Winner    *****')
         print()
 
 
@@ -70,66 +73,71 @@ class Game:
     def collecting_gestures(self):
         self.player_one_gesture = self.player_one.choosing_gesture()
         self.player_two_gesture = self.player_two.choosing_gesture()
-
-        print(f'Player ONE has chosen {self.player_one_gesture}')
-        print(f'Player TWO has chosen {self.player_two_gesture}')
+        print()
+        self.delprint(f'Player ONE has chosen {self.player_one_gesture}')
+        self.delprint(f'Player TWO has chosen {self.player_two_gesture}')
     
 
     
     def compare_choices(self):
         if self.player_one_gesture == 'rock':
             if self.player_two_gesture == 'rock':
-                print('tie')
+                self.delprint('tie')
             elif self.player_two_gesture == 'scissors' or 'lizard':
-                print('Player 1 beats Player 2')
+
+                self.delprint('Player 1 beats Player 2')
                 self.player_one_wins += 1
 
             else:
-                print('Player 2 beats Player 1')
+                self.delprint('Player 2 beats Player 1')
                 self.player_two_wins += 1
         elif self.player_one_gesture == 'paper':
             if self.player_two_gesture == 'paper':
-                print('tie')
+                self.delprint('tie')
             elif self.player_two_gesture == 'rock' or 'spock':
-                print('Player 1 beats Player 2')
+                self.delprint('Player 1 beats Player 2')
                 self.player_one_wins += 1
             else:
-                print('Player 2 beats Player 1')
+                self.delprint('Player 2 beats Player 1')
                 self.player_two_wins += 1
         elif self.player_one_gesture == 'scissors':
             if self.player_two_gesture == 'scissors':
-                print('tie')
+                self.delprint('tie')
             elif self.player_two_gesture == 'paper' or self.player_two_gesture =='lizard':
-                print('Player 1 beats Player 2')
+                self.delprint('Player 1 beats Player 2')
                 self.player_one_wins += 1
             else:
-                print('Player 2 beats Player 1')
+                self.delprint('Player 2 beats Player 1')
                 self.player_two_wins += 1
         elif self.player_one_gesture == 'lizard':
             if self.player_two_gesture == 'lizard':
-                print('tie')
+                self.delprint('tie')
             elif self.player_two_gesture == 'spock' or self.player_two_gesture =='paper':
-                print('Player 1 beats Player 2')
+                self.delprint('Player 1 beats Player 2')
                 self.player_one_wins += 1
             else:
-                print('Player 2 beats Player 1')
+                self.delprint('Player 2 beats Player 1')
                 self.player_two_wins += 1
         elif self.player_one_gesture == 'spock':
             if self.player_two_gesture == 'spock':
-                print('tie')
+                self.delprint('tie')
             elif self.player_two_gesture == 'scissors' or self.player_two_gesture =='rock':
-                print('Player 1 beats Player 2')
+                self.delprint('Player 1 beats Player 2')
                 self.player_one_wins += 1
             else:
-                print('Player 2 beats Player 1')
+                self.delprint('Player 2 beats Player 1')
                 self.player_two_wins += 1
-
-        print(f'Total Player One Wins: {self.player_one_wins}')
-        print(f'Total Player Two Wins: {self.player_two_wins}')
+        print()
+        self.delprint(f'Total Player One Wins: {self.player_one_wins}')
+        self.delprint(f'Total Player Two Wins: {self.player_two_wins}')
 
   
-    
 
+    def delprint(self,text): 
+        for character in text + '\n':      
+            sys.stdout.write(character) 
+            sys.stdout.flush()
+            time.sleep(.05)
         
 
 

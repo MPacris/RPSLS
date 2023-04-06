@@ -14,7 +14,7 @@ class Human(Player):
             return self.gesture
       
         else:
-            print('VOID')
+            print(' Not a valid choice, try again...')
             
             return self.choosing_gesture()
 
